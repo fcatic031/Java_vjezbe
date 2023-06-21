@@ -9,7 +9,7 @@ public class RandomIntegerGuess {
 
 		Random rand = new Random();
 		int rand_int = rand.nextInt(100);
-		boolean fact = false;
+		boolean fact = true;
 
 		int x1 = 0;
 		int x2 = 100;
@@ -22,7 +22,7 @@ public class RandomIntegerGuess {
 				if (x == rand_int) {
 					System.out.println("Correct");
 					System.out.println("You guessed the number " + rand_int + " in your " + i + ". attempt!");
-					fact = true;
+					fact = false;
 				} else if (x < rand_int) {
 					System.out.println("Too low number, choose a higher next time ");
 					x1 = x;
@@ -37,6 +37,6 @@ public class RandomIntegerGuess {
 				System.out.println("ERROR");
 				i--;
 			}
-		} while (fact == false);
+		} while (fact);
 	}
 }
