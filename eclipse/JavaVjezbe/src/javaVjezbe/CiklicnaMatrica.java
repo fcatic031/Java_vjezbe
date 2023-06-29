@@ -25,13 +25,22 @@ boolean dev = false;
 			for (int i=ymin; i<=ymax; i++) {
 				tablica[x-xmin][y-i]=num++;
 			}
+			if (num>=(x*y)+1) {
+				break;
+			}
 			xmin++;
 			for (int i=xmin; i<=xmax;i++) {
 				tablica[x-i][y-ymax]=num++;
 			}
+			if (num>=(x*y)+1) {
+				break;
+			}
 			
 			for (int i=ymin;i<=y-ymin;i++) {
 				tablica[x-xmax][i]=num++;
+			}
+			if (num>=(x*y)+1) {
+				break;
 			}
 			ymax--;
 			for (int i=xmin-1; i<=x-xmin;i++) {
