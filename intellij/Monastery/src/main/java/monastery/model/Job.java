@@ -1,12 +1,19 @@
 package monastery.model;
 
-import java.util.Date;
+import jakarta.persistence.ManyToMany;
 
+import java.util.Date;
+import java.util.List;
+
+@jakarta.persistence.Entity
 public class Job extends Entity{
 
     private String name;
     private String description;
     private Date beginDate;
+
+    @ManyToMany
+    private List<Priest> priests;
 
     public String getName() {
         return name;

@@ -1,11 +1,25 @@
 package monastery.model;
 
+import jakarta.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public abstract class Person extends Entity {
 
     private String firstName;
     private String lastName;
     private String email;
     private String oib;
+
+    public Person() {
+    }
+
+    public Person(Integer id, String firstName, String lastName, String email, String oib) {
+        super(id);
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.oib = oib;
+    }
 
     public String getFirstName() {
         return firstName;
